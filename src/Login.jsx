@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
+  const [error,setError]=useState("")
   const dispatch=useDispatch()
   const navigate=useNavigate()
 const handleLogin=async()=>{
@@ -25,6 +26,7 @@ navigate("/")
 
   }catch(err){
 console.error(err)
+setError("Please login with a valid credential")
   }
 
 }
@@ -46,6 +48,7 @@ console.error(err)
   <input type="text" className="input" placeholder="Type here" onChange={(e)=>setPassword(e.target.value)}  value={password}/>
 
 </fieldset>
+<p className='text-red-600'>{error}</p>
     <div className="mt-6">
       <button onClick={handleLogin} className="btn btn-primary btn-block">Login</button>
     </div>
