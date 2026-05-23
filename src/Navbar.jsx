@@ -23,7 +23,7 @@ console.error(err)
   return (
   <div className="navbar bg-base-100 shadow-sm">
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl">Bingee</a>
+    <Link to="/" className="btn btn-ghost text-xl">Bingee</Link>
   </div>
 {user &&  <div className="flex gap-2">
  <span className='mt-2'>{user?.firstName} {user?.lastName}</span>
@@ -45,7 +45,16 @@ console.error(err)
             <span className="badge">New</span>
           </Link>
         </li>
-      
+        <li>
+       <Link className="justify-between" to="/connections">
+           Connections
+            
+          </Link>
+           <Link className="justify-between" to="/requests">
+         Requests
+            
+          </Link>
+        </li>
         <li><a onClick={handleLogout}>Logout</a></li>
       </ul>
     </div>
